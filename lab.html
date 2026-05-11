@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab | Wei Huang</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Crimson+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+  <canvas id="ocean-canvas" class="fixed inset-0 -z-20 w-full h-full"></canvas>
+  <div class="ocean-bg fixed inset-0 -z-10 hidden">
+    <div class="wave"></div>
+    <div class="wave wave-2"></div>
+  </div>
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center" style="background: rgba(45,120,165,0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+    <a href="index.html" class="text-3xl font-bold font-heading tracking-tighter">
+      Wei<span class="text-[#2E86AB]">Huang</span>
+    </a>
+    <div class="hidden md:flex nav-container">
+      <a href="lab.html" class="nav-link">Lab</a>
+      <a href="publications.html" class="nav-link">Publications</a>
+      <a href="research.html" class="nav-link">Research</a>
+      <a href="fieldwork.html" class="nav-link">Fieldwork</a>
+      <a href="teaching.html" class="nav-link">Teaching</a>
+      <a href="team.html" class="nav-link">My Team</a>
+      <a href="mentors.html" class="nav-link">Mentors</a>
+      <a href="cv.html" class="nav-link">CV</a>
+      <button onclick="toggleOceanEffect()" class="nav-switch active" title="Toggle Ocean Effect"></button>
+    </div>
+  </nav>
+
+<!-- Lab Page Content -->
+<section class="relative pt-32 pb-24 px-6 z-0">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl md:text-5xl font-bold mb-8 font-heading">Coastal and Estuarine Dynamics Laboratory</h1>
+    
+    <div class="glass p-8 rounded-2xl mb-12">
+      <p class="text-lg leading-relaxed mb-6">
+        This is the front page of the <strong>Coastal and Estuarine Dynamics Laboratory</strong>, led by Dr. Wei Huang at <a href="https://case.fiu.edu/about/directory/profiles/wei-huang.html" target="_blank" class="text-[#5DADE2] hover:underline">Florida International University</a>.
+      </p>
+      <p class="text-lg leading-relaxed">
+        We are interested in using <strong>field measurements</strong>, <strong>theoretical analysis</strong>, and <strong>numerical models</strong> to investigate coastal processes including estuarine dynamics, compound flooding, and interactions between physical characteristics and biogeochemical processes under sea level rise and extreme weather conditions like hurricanes and storms.
+      </p>
+    </div>
+    
+    <!-- Profile Section -->
+    <div class="flex flex-col md:flex-row items-center gap-8 glass p-8 rounded-2xl">
+      <img src="https://huang96169.github.io/images/profile.png" alt="Wei Huang" class="w-48 h-48 object-cover rounded-full border-4 border-[#5DADE2]/30">
+      <div>
+        <h2 class="text-2xl font-bold mb-4">Wei Huang</h2>
+        <p class="text-lg text-[#5DADE2] mb-4">Assistant Professor in Physical Oceanography</p>
+        <div class="space-y-2 text-sm">
+          <p><span class="text-[#5DADE2]">Location:</span> Earth, Florida International University</p>
+          <p><span class="text-[#5DADE2]">Email:</span> <a href="mailto:wei.huang@fiu.edu" class="text-[#5DADE2] hover:underline">wei.huang@fiu.edu</a></p>
+          <p><a href="https://scholar.google.com/citations?user=6Dhb0skAAAAJ&hl=en" target="_blank" class="text-[#5DADE2] hover:underline">Google Scholar</a></p>
+          <p><a href="https://orcid.org/0000-0003-2961-1748" target="_blank" class="text-[#5DADE2] hover:underline">ORCID: 0000-0003-2961-1748</a></p>
+          <p><a href="https://www.researchgate.net/profile/Wei-Huang-183" target="_blank" class="text-[#5DADE2] hover:underline">ResearchGate</a></p>
+          <p><a href="https://github.com/huang96169" target="_blank" class="text-[#5DADE2] hover:underline">Github</a></p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- News Section -->
+    <h2 class="text-3xl font-bold mt-16 mb-8 font-heading">News</h2>
+    <div class="space-y-6">
+      <div class="glass p-6 rounded-xl">
+        <h3 class="text-lg font-bold text-[#5DADE2] mb-2">2025 September</h3>
+        <p><a href="https://doi.org/10.1016/j.ocemod.2025.102624" target="_blank" class="text-[#5DADE2] hover:underline font-semibold">New research paper</a> published - Wind-driven exchange flow and inter-basin connectivity in a multiple-inlet bay, Ocean Modelling.</p>
+      </div>
+      <div class="glass p-6 rounded-xl">
+        <h3 class="text-lg font-bold text-[#5DADE2] mb-2">2025 August</h3>
+        <p>We have one PhD student and one master student on board! Welcome Alihan and Jocelyn! I'm co-advising a master student, Mason Sanford, starting this fall semester.</p>
+      </div>
+      <div class="glass p-6 rounded-xl">
+        <h3 class="text-lg font-bold text-[#5DADE2] mb-2">2024 August</h3>
+        <p>We have a new PhD student on board! Welcome, Tahsina Zarin!</p>
+      </div>
+      <div class="glass p-6 rounded-xl">
+        <h3 class="text-lg font-bold text-[#5DADE2] mb-2">2024 May</h3>
+        <p><a href="https://doi.org/10.3390/jmse12050767" target="_blank" class="text-[#5DADE2] hover:underline font-semibold">New research paper</a> published - Modes of Weather System-Induced Flows through an Arctic Lagoon, J. Mar. Sci. Eng.</p>
+      </div>
+      <div class="glass p-6 rounded-xl">
+        <h3 class="text-lg font-bold text-[#5DADE2] mb-2">2024 March</h3>
+        <p><a href="https://doi.org/10.1007/s10236-024-01608-9" target="_blank" class="text-[#5DADE2] hover:underline font-semibold">New research paper</a> published - Cold fronts control multiscale spatiotemporal hydroperiod patterns in a man-made subtropical coastal delta, Ocean Dynamics.</p>
+      </div>
+    </div>
+    
+    <!-- Opportunities -->
+    <div class="glass p-8 rounded-2xl mt-12">
+      <h2 class="text-2xl font-bold mb-4">Opportunities</h2>
+      <p>No opening at this time. Please check back later.</p>
+    </div>
+    
+    <!-- Contact -->
+    <div class="glass p-8 rounded-2xl mt-12">
+      <h2 class="text-2xl font-bold mb-4">Contact</h2>
+      <p class="mb-2"><strong>Florida International University</strong></p>
+      <p class="mb-2">Department of Earth and Environment and Institute of Environment</p>
+      <p class="mb-2">11200 SW 8th Street, Miami FL 33199</p>
+      <p class="mb-2">Office: 305-348-1732</p>
+      <p><strong>Email:</strong> <a href="mailto:wei.huang@fiu.edu" class="text-[#5DADE2] hover:underline">wei.huang@fiu.edu</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="relative py-12 px-6 z-0 text-center">
+  <div class="glass inline-block px-6 py-3 rounded-full">
+    <p class="text-sm">Follow: <a href="https://github.com/huang96169" target="_blank" class="text-[#5DADE2] hover:underline">GitHub</a></p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

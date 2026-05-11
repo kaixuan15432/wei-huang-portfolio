@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Model-Observation Comparison - Florida Coastal Stations - Wei Huang</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Crimson+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen">
+  <canvas id="ocean-canvas" class="fixed inset-0 -z-20 w-full h-full"></canvas>
+  <div class="ocean-bg fixed inset-0 -z-10 hidden">
+    <div class="wave"></div>
+    <div class="wave wave-2"></div>
+  </div>
+
+  <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center" style="background: rgba(45,120,165,0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+    <a href="../index.html" class="text-3xl font-bold font-heading tracking-tighter">
+      Wei<span class="text-[#2E86AB]">Huang</span>
+    </a>
+    <div class="hidden md:flex nav-container">
+      <a href="../lab.html" class="nav-link">Lab</a>
+      <a href="../publications.html" class="nav-link">Publications</a>
+      <a href="../research.html" class="nav-link">Research</a>
+      <a href="../fieldwork.html" class="nav-link">Fieldwork</a>
+      <a href="../teaching.html" class="nav-link">Teaching</a>
+      <a href="../team.html" class="nav-link">My Team</a>
+      <a href="../mentors.html" class="nav-link">Mentors</a>
+      <a href="../cv.html" class="nav-link">CV</a>
+      <button onclick="toggleOceanEffect()" class="nav-switch active" title="Toggle Ocean Effect"></button>
+    </div>
+  </nav>
+
+  <section class="relative pt-32 pb-24 px-6 z-0">
+    <div class="max-w-4xl mx-auto">
+      <div class="glass p-8 rounded-2xl">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4 font-heading">Model-Observation Comparison - Florida Coastal Stations</h1>
+        <p class="text-sm text-[#5DADE2] mb-6">Published: May 09, 2026</p>
+        
+        <p class="mb-4">Disclaimer: "NOAA Water Levels - Florida Coastal Stations"</p>
+        
+        <div class="flex items-center gap-4 mt-8 pt-6 border-t border-[#5DADE2]/20">
+          <span class="text-sm text-gray-600">Share on</span>
+          <a href="https://twitter.com/intent/tweet?text=https://huang96169.github.io/research/research-3/" target="_blank" class="text-[#5DADE2] hover:underline">Twitter</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://huang96169.github.io/research/research-3/" target="_blank" class="text-[#5DADE2] hover:underline">Facebook</a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://huang96169.github.io/research/research-3/" target="_blank" class="text-[#5DADE2] hover:underline">LinkedIn</a>
+        </div>
+        
+        <div class="flex justify-between mt-8 pt-6 border-t border-[#5DADE2]/20">
+          <a href="research-2.html" class="text-[#5DADE2] hover:underline">← Previous</a>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="../main.js"></script>
+</body>
+</html>

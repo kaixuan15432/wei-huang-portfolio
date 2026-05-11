@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experimental Forecasting System for South Florida - Wei Huang</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Crimson+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen">
+  <canvas id="ocean-canvas" class="fixed inset-0 -z-20 w-full h-full"></canvas>
+  <div class="ocean-bg fixed inset-0 -z-10 hidden">
+    <div class="wave"></div>
+    <div class="wave wave-2"></div>
+  </div>
+
+  <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center" style="background: rgba(45,120,165,0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+    <a href="../index.html" class="text-3xl font-bold font-heading tracking-tighter">
+      Wei<span class="text-[#2E86AB]">Huang</span>
+    </a>
+    <div class="hidden md:flex nav-container">
+      <a href="../lab.html" class="nav-link">Lab</a>
+      <a href="../publications.html" class="nav-link">Publications</a>
+      <a href="../research.html" class="nav-link">Research</a>
+      <a href="../fieldwork.html" class="nav-link">Fieldwork</a>
+      <a href="../teaching.html" class="nav-link">Teaching</a>
+      <a href="../team.html" class="nav-link">My Team</a>
+      <a href="../mentors.html" class="nav-link">Mentors</a>
+      <a href="../cv.html" class="nav-link">CV</a>
+      <button onclick="toggleOceanEffect()" class="nav-switch active" title="Toggle Ocean Effect"></button>
+    </div>
+  </nav>
+
+  <section class="relative pt-32 pb-24 px-6 z-0">
+    <div class="max-w-4xl mx-auto">
+      <div class="glass p-8 rounded-2xl">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4 font-heading">Experimental Forecasting System for South Florida</h1>
+        <p class="text-sm text-[#5DADE2] mb-6">Published: May 09, 2026</p>
+        
+        <p class="mb-4">Disclaimer: This is an experimental web portal for graphic visualization of the operational and experimental results from the storm surge and tide forecast systems being developed and tested by our lab at FIU using <a href="https://ccrm.vims.edu/schismweb/" target="_blank" class="text-[#5DADE2] hover:underline">SCHISM</a>.</p>
+        <p class="mb-4">It should not be used as an official forecast.</p>
+        
+        <h3 class="text-xl font-bold text-[#2E86AB] mt-6 mb-4">Flooding warning in Biscayne Bay coastal area on 20260513</h3>
+        <img src="https://huang96169.github.io/images/research_maxelev2.gif" alt="Surface water elevation" class="w-full rounded-lg mb-2 cursor-pointer hover:opacity-80 transition-opacity" onclick="openImageModal(this.src)">
+        <p class="text-sm text-gray-600 mb-6">Surface water elevation from 20260509 to 20260513</p>
+        
+        <img src="https://huang96169.github.io/images/research_elev2.gif" alt="Surface current velocity" class="w-full rounded-lg mb-2 cursor-pointer hover:opacity-80 transition-opacity" onclick="openImageModal(this.src)">
+        <p class="text-sm text-gray-600 mb-6">Surface current velocity from 20260509 to 20260513</p>
+        
+        <img src="https://huang96169.github.io/images/research_uv2.gif" alt="Surface current velocity" class="w-full rounded-lg mb-2 cursor-pointer hover:opacity-80 transition-opacity" onclick="openImageModal(this.src)">
+        <p class="text-sm text-gray-600 mb-6">Surface current velocity in Biscayne Bay on 20260513</p>
+        
+        <img src="https://huang96169.github.io/images/research_Bbay.png" alt="Biscayne Bay" class="w-full rounded-lg mb-2 cursor-pointer hover:opacity-80 transition-opacity" onclick="openImageModal(this.src)">
+        <p class="text-sm text-gray-600 mb-6">Surface current velocity in Charlotte Harbor on 20260513</p>
+        
+        <img src="https://huang96169.github.io/images/research_Cbay.png" alt="Charlotte Harbor" class="w-full rounded-lg mb-2 cursor-pointer hover:opacity-80 transition-opacity" onclick="openImageModal(this.src)">
+        <p class="text-sm text-gray-600 mb-6">Surface current velocity in Charlotte Harbor on 20260513</p>
+        
+        <img src="https://huang96169.github.io/images/research_Tbay.png" alt="Tampa Bay" class="w-full rounded-lg mb-2 cursor-pointer hover:opacity-80 transition-opacity" onclick="openImageModal(this.src)">
+        <p class="text-sm text-gray-600 mb-6">Surface current velocity in Tampa Bay on 20260513</p>
+        
+        <div class="flex items-center gap-4 mt-8 pt-6 border-t border-[#5DADE2]/20">
+          <span class="text-sm text-gray-600">Share on</span>
+          <a href="https://twitter.com/intent/tweet?text=https://huang96169.github.io/research/research-2/" target="_blank" class="text-[#5DADE2] hover:underline">Twitter</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://huang96169.github.io/research/research-2/" target="_blank" class="text-[#5DADE2] hover:underline">Facebook</a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://huang96169.github.io/research/research-2/" target="_blank" class="text-[#5DADE2] hover:underline">LinkedIn</a>
+        </div>
+        
+        <div class="flex justify-between mt-8 pt-6 border-t border-[#5DADE2]/20">
+          <a href="research-1.html" class="text-[#5DADE2] hover:underline">← Previous</a>
+          <a href="research-3.html" class="text-[#5DADE2] hover:underline">Next →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="../main.js"></script>
+<script>
+function openImageModal(src) {
+  const modal = document.createElement('div');
+  modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;z-index:9999;cursor:pointer;';
+  modal.innerHTML = '<img src="' + src + '" style="max-width:90%;max-height:90%;border-radius:8px;">';
+  modal.onclick = () => modal.remove();
+  document.body.appendChild(modal);
+}
+</script>
+</body>
+</html>

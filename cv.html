@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV | Wei Huang</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Crimson+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+  <canvas id="ocean-canvas" class="fixed inset-0 -z-20 w-full h-full"></canvas>
+  <div class="ocean-bg fixed inset-0 -z-10 hidden">
+    <div class="wave"></div>
+    <div class="wave wave-2"></div>
+  </div>
+
+<nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center" style="background: rgba(45,120,165,0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+    <a href="index.html" class="text-3xl font-bold font-heading tracking-tighter">
+      Wei<span class="text-[#2E86AB]">Huang</span>
+    </a>
+    <div class="hidden md:flex nav-container">
+      <a href="lab.html" class="nav-link">Lab</a>
+      <a href="publications.html" class="nav-link">Publications</a>
+      <a href="research.html" class="nav-link">Research</a>
+      <a href="fieldwork.html" class="nav-link">Fieldwork</a>
+      <a href="teaching.html" class="nav-link">Teaching</a>
+      <a href="team.html" class="nav-link">My Team</a>
+      <a href="mentors.html" class="nav-link">Mentors</a>
+      <a href="cv.html" class="nav-link">CV</a>
+      <button onclick="toggleOceanEffect()" class="nav-switch active" title="Toggle Ocean Effect"></button>
+    </div>
+  </nav>
+
+<section class="relative pt-32 pb-24 px-6 z-0">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl md:text-5xl font-bold mb-12 font-heading">CV</h1>
+    
+    <div class="space-y-12">
+      <div class="glass p-8 rounded-2xl">
+        <h2 class="text-2xl font-bold mb-6 text-[#5DADE2]">Education</h2>
+        <ul class="space-y-4 text-lg">
+          <li class="flex items-start">
+            <span class="w-3 h-3 mt-2 rounded-full bg-[#5DADE2] mr-4 flex-shrink-0"></span>
+            <div>
+              <strong>Ph.D in Physical Oceanography</strong><br>
+              Louisiana State University, December 2019
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="w-3 h-3 mt-2 rounded-full bg-[#5DADE2] mr-4 flex-shrink-0"></span>
+            <div>
+              <strong>M.S. in Meteorology</strong><br>
+              Nanjing University of Information Science and Technology, June 2013
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="w-3 h-3 mt-2 rounded-full bg-[#5DADE2] mr-4 flex-shrink-0"></span>
+            <div>
+              <strong>B.S. in Marine Science</strong><br>
+              Nanjing University of Information Science and Technology, June 2010
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="relative py-12 px-6 z-0 text-center">
+  <div class="glass inline-block px-6 py-3 rounded-full">
+    <p class="text-sm">Follow: <a href="https://github.com/huang96169" target="_blank" class="text-[#5DADE2] hover:underline">GitHub</a></p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
