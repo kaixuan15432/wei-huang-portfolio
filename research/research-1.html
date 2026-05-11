@@ -31,7 +31,31 @@
       <a href="../cv.html" class="nav-link">CV</a>
       <button onclick="toggleOceanEffect()" class="nav-switch active" title="Toggle Ocean Effect"></button>
     </div>
+    <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-white/20 backdrop-blur-sm">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
   </nav>
+
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-[#1A5276]/95 backdrop-blur-lg hidden md:hidden">
+    <div class="flex flex-col items-center justify-center h-full space-y-6 pt-16">
+      <a href="../lab.html" class="text-2xl font-bold text-white hover:text-[#5DADE2] transition-colors">Lab</a>
+      <a href="../publications.html" class="text-2xl font-bold text-white hover:text-[#5DADE2] transition-colors">Publications</a>
+      <a href="../research.html" class="text-2xl font-bold text-white hover:text-[#5DADE2] transition-colors">Research</a>
+      <a href="../fieldwork.html" class="text-2xl font-bold text-white hover:text-[#5DADE2] transition-colors">Fieldwork</a>
+      <a href="../teaching.html" class="text-2xl font-bold text-white hover:text-[#5DADE2] transition-colors">Teaching</a>
+      <a href="../team.html" class="text-2xl font-bold text-white hover:text-[#5DADE2] transition-colors">My Team</a>
+      <a href="../mentors.html" class="text-2xl font-bold text-white hover:text-[#5DADE2] transition-colors">Mentors</a>
+      <a href="../cv.html" class="text-2xl font-bold text-white hover:text-[#5DADE2] transition-colors">CV</a>
+      <button onclick="toggleOceanEffect(); toggleMobileMenu();" class="nav-switch active mt-4" title="Toggle Ocean Effect"></button>
+      <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 p-2">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
 
   <section class="relative pt-32 pb-24 px-6 z-0">
     <div class="max-w-4xl mx-auto">
